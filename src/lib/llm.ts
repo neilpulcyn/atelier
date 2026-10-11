@@ -2,9 +2,14 @@ import type { StyleProfile } from '../types';
 import type { Outfit } from './stylist';
 import type { WeatherSummary } from './weather';
 
+// The optional LLM proxy only exists when served by server.mjs (npm start). Static hosts such as
+// GitHub Pages have no backend, so skip the probe there to avoid a pointless 404.
+const STATIC_HOST = /\.github\.io$/i.test(location.hostname);
+
 export async function llmAvailable(): Promise<{ available: boolean; provider?: string }> {
+  if (STATIC_HOST) return { available: false };
   try {
-    const r = await fetch('/api/health', { cache: 'no-store' });
+    const r = await fetch('api/health', { cache: 'no-store' });
     if (!r.ok) return { available: false };
     const j = await r.json();
     return { available: !!j.llm, provider: j.provider };
@@ -21,7 +26,7 @@ export async function llmReply(
   draft?: Outfit,
 ): Promise<string | null> {
   try {
-    const r = await fetch('/api/chat', {
+    const r = await fetch('api/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ history: history.slice(-10), profile, weather, draft }),

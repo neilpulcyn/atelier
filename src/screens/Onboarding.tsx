@@ -17,7 +17,7 @@ export function Onboarding({ onDone, initial, onCancel }: { onDone: (p: StylePro
   if (stage === 'welcome') {
     return (
       <div className="relative h-full overflow-hidden bg-ink text-paper">
-        <img src="/img/p97.jpg" alt="" className="absolute inset-0 h-full w-full object-cover opacity-90" />
+        <img src="img/p97.jpg" alt="" className="absolute inset-0 h-full w-full object-cover opacity-90" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/90" />
         <div className="pt-safe relative flex h-full flex-col px-7 pb-10">
           <div className="mt-8 flex items-center justify-between">

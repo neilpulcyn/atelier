@@ -59,7 +59,7 @@ const now = Date.now();
 export const SEED_POSTS: Post[] = rows.map(([id, creatorId, img, style, caption, tags, colours, likes, daysAgo, location], i) => ({
   id,
   creatorId,
-  image: `/img/p${img}.jpg`,
+  image: `img/p${img}.jpg`,
   caption,
   style,
   tags,

@@ -1,9 +1,11 @@
-// Headless walkthrough of Atelier at iPhone size. Usage: node scripts/walkthrough.mjs [baseUrl]
+// Headless walkthrough of Atelier at iPhone size. Usage: node scripts/walkthrough.mjs [baseUrl] [shotPrefix]
+// e.g. node scripts/walkthrough.mjs https://<user>.github.io/atelier/ live-
 import { chromium } from 'playwright';
 import fs from 'node:fs';
 
 const BASE = process.argv[2] || 'http://localhost:4173';
 const OUT = new URL('../screenshots/', import.meta.url).pathname;
+const PREFIX = process.argv[3] || '';
 fs.mkdirSync(OUT, { recursive: true });
 
 const browser = await chromium.launch();
@@ -22,6 +24,7 @@ const page = await ctx.newPage();
 const problems = [];
 page.on('console', (m) => { if (m.type() === 'error') problems.push('console: ' + m.text()); });
 page.on('pageerror', (e) => problems.push('pageerror: ' + e.message));
+page.on('requestfailed', (r) => problems.push(`FAILED ${r.url()} ${r.failure()?.errorText}`));
 page.on('response', (r) => { if (r.status() >= 400) problems.push(`HTTP ${r.status()} ${r.url()}`); });
 
 const shot = async (name) => {
@@ -34,8 +37,8 @@ const shot = async (name) => {
   ]));
   const broken = await page.evaluate(() => [...document.images].filter((i) => { const b = i.getBoundingClientRect(); return i.complete && i.naturalWidth === 0 && b.bottom > 0 && b.top < innerHeight; }).map((i) => i.src));
   if (broken.length) problems.push(`${name}: broken images ${broken.join(', ')}`);
-  await page.screenshot({ path: OUT + name });
-  console.log('saved', name);
+  await page.screenshot({ path: OUT + PREFIX + name });
+  console.log('saved', PREFIX + name);
 };
 const click = (text) => page.getByRole('button', { name: text, exact: true }).first().click();
 
@@ -69,6 +72,8 @@ await page.waitForSelector('text=Your style DNA');
 await shot('02-style-result.png');
 await page.getByRole('button', { name: 'Enter Atelier' }).click();
 await page.waitForSelector('text=Recommended outfits');
+const feedImgs = await page.evaluate(() => [...document.images].filter((i) => i.complete && i.naturalWidth > 0).length);
+console.log('Feed images loaded:', feedImgs);
 await shot('03-feed.png');
 // interact: like the first post via double tap + scroll check
 await page.locator('article').first().scrollIntoViewIfNeeded();

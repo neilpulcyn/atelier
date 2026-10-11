@@ -65,3 +65,9 @@ Images are free-licence Unsplash photos, downloaded into `public/img/` so the ap
 
 Single device, no accounts or real social graph. Seed content is static. Uploaded images live in localStorage (~5 MB quota).
 Without a key the stylist is rule-based. Event times are shown as entered (local to the venue).
+
+## Live on GitHub Pages
+
+The app is deployed to **https://neilpulcyn.github.io/atelier/** by `.github/workflows/pages.yml` on every push to `main`.
+The build uses a relative Vite `base` (`./`), so the same `dist/` works at `/` (`npm start`) and under `/atelier/` on Pages.
+On Pages there is no backend: the stylist runs fully client-side (rule-based engine + Open-Meteo weather) and the optional LLM toggle stays hidden.

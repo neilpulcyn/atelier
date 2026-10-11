@@ -20,7 +20,7 @@ export const STYLES: Record<StyleId, StyleMeta> = {
     keyPieces: ['Crisp white shirt', 'Camel wool coat', 'Straight-leg trousers', 'Fine-knit merino', 'Leather loafers'],
     palette: [ { name: 'Bone', hex: '#ece7df' }, { name: 'Camel', hex: '#c19a6b' }, { name: 'Stone', hex: '#a8a29a' }, { name: 'Black', hex: '#111111' }, { name: 'White', hex: '#fafafa' } ],
     muses: ['The Row', 'COS', 'Jil Sander'],
-    cover: '/img/p96.jpg',
+    cover: 'img/p96.jpg',
   },
   streetwear: {
     id: 'streetwear',
@@ -30,7 +30,7 @@ export const STYLES: Record<StyleId, StyleMeta> = {
     keyPieces: ['Boxy graphic tee', 'Heavyweight hoodie', 'Cargo trousers', 'Box-fresh trainers', 'Bomber jacket'],
     palette: [ { name: 'Black', hex: '#141414' }, { name: 'Safety orange', hex: '#ff6a13' }, { name: 'Grey marl', hex: '#9a9a9a' }, { name: 'Acid', hex: '#d4ff3a' }, { name: 'Washed blue', hex: '#6f8fb3' } ],
     muses: ['Corteiz', 'Stüssy', 'Martine Rose'],
-    cover: '/img/p2.jpg',
+    cover: 'img/p2.jpg',
   },
   classic: {
     id: 'classic',
@@ -40,7 +40,7 @@ export const STYLES: Record<StyleId, StyleMeta> = {
     keyPieces: ['Navy blazer', 'Trench coat', 'Oxford shirt', 'Pleated trousers', 'Polished brogues'],
     palette: [ { name: 'Navy', hex: '#1d2a44' }, { name: 'Ivory', hex: '#f4efe4' }, { name: 'Camel', hex: '#b88a57' }, { name: 'Burgundy', hex: '#6b1f2a' }, { name: 'Forest', hex: '#2f4a3a' } ],
     muses: ['Ralph Lauren', 'Max Mara', 'Drake\u2019s'],
-    cover: '/img/p14.jpg',
+    cover: 'img/p14.jpg',
   },
   bohemian: {
     id: 'bohemian',
@@ -50,7 +50,7 @@ export const STYLES: Record<StyleId, StyleMeta> = {
     keyPieces: ['Tiered maxi dress', 'Suede fringe jacket', 'Crochet knit', 'Wide-leg linen', 'Western boots'],
     palette: [ { name: 'Terracotta', hex: '#c4673f' }, { name: 'Sand', hex: '#dcc7a1' }, { name: 'Olive', hex: '#6b6b3a' }, { name: 'Rust', hex: '#9c4a1a' }, { name: 'Cream', hex: '#f3ead8' } ],
     muses: ['Chloé', 'Ulla Johnson', 'Free People'],
-    cover: '/img/p47.jpg',
+    cover: 'img/p47.jpg',
   },
   avantgarde: {
     id: 'avantgarde',
@@ -60,7 +60,7 @@ export const STYLES: Record<StyleId, StyleMeta> = {
     keyPieces: ['Asymmetric draped top', 'Sculptural coat', 'Wide-brim hat', 'Exaggerated trousers', 'Chunky platform boots'],
     palette: [ { name: 'Black', hex: '#0b0b0b' }, { name: 'Lacquer red', hex: '#c1121f' }, { name: 'Chrome', hex: '#c9cdd2' }, { name: 'Teal', hex: '#0f6b6b' }, { name: 'White', hex: '#ffffff' } ],
     muses: ['Comme des Garçons', 'Rick Owens', 'Iris van Herpen'],
-    cover: '/img/p86.jpg',
+    cover: 'img/p86.jpg',
   },
   romantic: {
     id: 'romantic',
@@ -70,7 +70,7 @@ export const STYLES: Record<StyleId, StyleMeta> = {
     keyPieces: ['Off-shoulder dress', 'Silk slip skirt', 'Puff-sleeve blouse', 'Mary Jane heels', 'Pearl accents'],
     palette: [ { name: 'Blush', hex: '#e9c4c0' }, { name: 'Claret', hex: '#8e1b2c' }, { name: 'Ivory', hex: '#f8f1e7' }, { name: 'Lilac', hex: '#b9a3c9' }, { name: 'Rose red', hex: '#c8102e' } ],
     muses: ['Zimmermann', 'Simone Rocha', 'Self-Portrait'],
-    cover: '/img/p49.jpg',
+    cover: 'img/p49.jpg',
   },
   sporty: {
     id: 'sporty',
@@ -80,7 +80,7 @@ export const STYLES: Record<StyleId, StyleMeta> = {
     keyPieces: ['Performance trainers', 'Tailored joggers', 'Zip-up track top', 'Technical shell', 'Cap & crossbody'],
     palette: [ { name: 'White', hex: '#fafafa' }, { name: 'Volt', hex: '#d4ff3a' }, { name: 'Cobalt', hex: '#1f4fd8' }, { name: 'Charcoal', hex: '#333333' }, { name: 'Coral', hex: '#ff7262' } ],
     muses: ['Nike', 'Arc\u2019teryx', 'Adanola'],
-    cover: '/img/p41.jpg',
+    cover: 'img/p41.jpg',
   },
   vintage: {
     id: 'vintage',
@@ -90,7 +90,7 @@ export const STYLES: Record<StyleId, StyleMeta> = {
     keyPieces: ['501-style jeans', 'Corduroy blazer', 'Suede jacket', 'Breton top', 'Chelsea boots'],
     palette: [ { name: 'Mustard', hex: '#d1a12c' }, { name: 'Tan', hex: '#a9764b' }, { name: 'Denim', hex: '#3e5a7a' }, { name: 'Brick', hex: '#9b3d2b' }, { name: 'Cream', hex: '#efe4cc' } ],
     muses: ['Levi\u2019s', 'Wales Bonner', 'Rokit'],
-    cover: '/img/p13.jpg',
+    cover: 'img/p13.jpg',
   },
 };
 
